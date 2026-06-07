@@ -1,0 +1,16 @@
+spring:
+  config:
+    import: "./env.test.properties"
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.jdbc.autoconfigure.DataSourceAutoConfiguration
+      - org.springframework.boot.hibernate.autoconfigure.HibernateJpaAutoConfiguration
+      - org.springframework.boot.data.jpa.autoconfigure.DataJpaRepositoriesAutoConfiguration
+
+server:
+  port: "${MAIN_APP_PORT}"
+
+security:
+  jwt:
+    secret-key: "${JWT_SECRET_TOKEN}"
+    expiration-time: 3600000
