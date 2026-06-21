@@ -7,6 +7,7 @@ Spring Boot base project with:
 - Spring Data JPA
 - Liquibase
 - PostgreSQL
+- H2 in-memory database for tests
 - OpenAPI UI (springdoc)
 
 ## Prerequisites
@@ -68,6 +69,13 @@ Run tests:
 ```bash
 mvn test
 ```
+
+## Testing
+
+- Unit and integration tests are configured to use an H2 in-memory database.
+- The Maven `pom.xml` now includes `com.h2database:h2` as a test dependency.
+- Test datasource settings are defined in `src/test/resources/application.yaml`.
+- Liquibase runs during tests using `classpath:db/changelog/db.changelog-master.yaml`.
 
 ## API Docs
 
