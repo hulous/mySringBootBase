@@ -9,8 +9,10 @@ spring:
     password: "${DB_PASSWORD}"
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     open-in-view: false
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
 
 server:
   port: "${MAIN_APP_PORT}"
